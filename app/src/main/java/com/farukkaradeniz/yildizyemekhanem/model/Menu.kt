@@ -8,6 +8,6 @@ package com.farukkaradeniz.yildizyemekhanem.model
  * Website: farukkaradeniz.com
  */
 sealed class YemekMenusu {
-    class Ogrenci(val ogle: String, val aksam: String) : YemekMenusu()
-    class Alakart(val ogle: String, val ogleAlt: String, val aksam: String, val aksamAlt: String) : YemekMenusu()
+    data class Ogrenci(val ogle: String, val aksam: String) : YemekMenusu()
+    data class Alakart(val ogle: String, val ogleAlt: String, val aksam: String, val aksamAlt: String) : YemekMenusu()
 }
