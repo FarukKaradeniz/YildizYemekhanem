@@ -10,8 +10,8 @@ import com.farukkaradeniz.yildizyemekhanem.model.YemekMenusu
  * LinkedIn: linkedin.com/in/FarukKaradeniz
  * Website: farukkaradeniz.com
  */
-class SharedPreferencesManager(val pref: SharedPreferences) {
-    val editor: SharedPreferences.Editor = pref.edit()
+class SharedPreferencesManager(private val pref: SharedPreferences) {
+    private val editor: SharedPreferences.Editor = pref.edit()
 
     fun saveYemekMenuList(day: Int, month: Int, year: Int, menuList: List<YemekMenusu>) {
         menuList.forEach { yemekMenusu ->
@@ -44,20 +44,13 @@ class SharedPreferencesManager(val pref: SharedPreferences) {
         }
     }
 
-    fun getYemekMenu(day: Int, month: Int, year: Int, tip: String): YemekMenusu {
-        return when (tip) {
-            "Ogrenci" -> getOgrenciMenu(day, month, year)
-            else -> getAlakartMenu(day, month, year)
-        }
-    }
-
-    private fun getOgrenciMenu(day: Int, month: Int, year: Int): YemekMenusu.Ogrenci {
+    fun getOgrenciMenu(day: Int, month: Int, year: Int): YemekMenusu.Ogrenci {
         val ogleMain = pref.getString("O#$day#$month#$year#OM", "Ogle Yemek Menusu Bulunamadı")
         val aksamMain = pref.getString("O#$day#$month#$year#AM", "Aksam Yemek Menusu Bulunamadı")
         return YemekMenusu.Ogrenci(ogleMain, aksamMain)
     }
 
-    private fun getAlakartMenu(day: Int, month: Int, year: Int): YemekMenusu.Alakart {
+    fun getAlakartMenu(day: Int, month: Int, year: Int): YemekMenusu.Alakart {
         val ogleMain = pref.getString("A#$day#$month#$year#OM", "Ogle Yemek Menusu Bulunamadı")
         val ogleAlt = pref.getString("A#$day#$month#$year#OA", "Ogle alternatif Yemek Menusu Bulunamadı")
         val aksamMain = pref.getString("A#$day#$month#$year#AM", "Aksam Yemek Menusu Bulunamadı")
