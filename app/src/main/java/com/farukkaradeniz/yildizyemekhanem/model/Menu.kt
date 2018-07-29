@@ -8,6 +8,19 @@ package com.farukkaradeniz.yildizyemekhanem.model
  * Website: farukkaradeniz.com
  */
 sealed class YemekMenusu {
-    data class Ogrenci(val ogle: String, val aksam: String) : YemekMenusu()
-    data class Alakart(val ogle: String, val ogleAlt: String, val aksam: String, val aksamAlt: String) : YemekMenusu()
+    data class Ogrenci(val ogle: String, val aksam: String) : YemekMenusu() {
+        fun isEmpty(): Boolean {
+            return ogle == "Ogle Yemek Menusu Bulunamadı"
+                    || aksam == "Aksam Yemek Menusu Bulunamadı"
+        }
+    }
+
+    data class Alakart(val ogle: String, val ogleAlt: String, val aksam: String, val aksamAlt: String) : YemekMenusu() {
+        fun isEmpty(): Boolean {
+            return ogle == "Ogle Yemek Menusu Bulunamadı"
+                    || aksam == "Aksam Yemek Menusu Bulunamadı"
+                    || ogleAlt == "Ogle alternatif Yemek Menusu Bulunamadı"
+                    || aksamAlt == "Aksam alternatif Yemek Menusu Bulunamadı"
+        }
+    }
 }
