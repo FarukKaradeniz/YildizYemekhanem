@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Yildiz Yemekhanem</string>
+    <string-array name="switch_array">
+        <item>Öğrenci</item>
+        <item>Alakart</item>
+    </string-array>
+    <string name="ogle_string"><u>Öğle</u></string>
+    <string name="aksam_string"><u>Akşam</u></string>
+    <string name="alternatif_string"><u>Alternatif</u></string>
+    <string name="menu_placeholder">Menu yok</string>
+    <string name="alternatif_bulunamadi">Alternatif Menu Bulunamadı.</string>
 </resources>

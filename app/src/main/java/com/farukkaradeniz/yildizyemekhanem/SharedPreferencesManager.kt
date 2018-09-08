@@ -37,9 +37,9 @@ class SharedPreferencesManager(private val pref: SharedPreferences) {
     private fun saveAlakartMenu(day: Int, month: Int, year: Int, menu: YemekMenusu.Alakart) {
         with(editor) {
             putString("A#$day#$month#$year#OM", ifEmpty(menu.ogle, "Ogle Yemek Menusu Bulunamadı"))
-            putString("A#$day#$month#$year#OA", ifEmpty(menu.ogleAlt, "Ogle alternatif Yemek Menusu Bulunamadı"))
+            putString("A#$day#$month#$year#OA", ifEmpty(menu.ogleAlt, "Alternatif Menu Bulunamadı."))
             putString("A#$day#$month#$year#AM", ifEmpty(menu.aksam, "Aksam Yemek Menusu Bulunamadı"))
-            putString("A#$day#$month#$year#AA", ifEmpty(menu.aksamAlt, "Aksam alternatif Yemek Menusu Bulunamadı"))
+            putString("A#$day#$month#$year#AA", ifEmpty(menu.aksamAlt, "Alternatif Menu Bulunamadı."))
             apply()
         }
     }
@@ -60,9 +60,9 @@ class SharedPreferencesManager(private val pref: SharedPreferences) {
 
     fun getAlakartMenu(day: Int, month: Int, year: Int): YemekMenusu.Alakart {
         val ogleMain = pref.getString("A#$day#$month#$year#OM", "Ogle Yemek Menusu Bulunamadı")
-        val ogleAlt = pref.getString("A#$day#$month#$year#OA", "Ogle alternatif Yemek Menusu Bulunamadı")
+        val ogleAlt = pref.getString("A#$day#$month#$year#OA", "Alternatif Menu Bulunamadı.")
         val aksamMain = pref.getString("A#$day#$month#$year#AM", "Aksam Yemek Menusu Bulunamadı")
-        val aksamAlt = pref.getString("A#$day#$month#$year#AA", "Aksam alternatif Yemek Menusu Bulunamadı")
+        val aksamAlt = pref.getString("A#$day#$month#$year#AA", "Alternatif Menu Bulunamadı.")
         return YemekMenusu.Alakart(ogleMain, ogleAlt, aksamMain, aksamAlt)
     }
 }
