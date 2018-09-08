@@ -4,15 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f6ff77"
     tools:context=".MainActivity">
 
-    <TextView
+    <lib.kingja.switchbutton.SwitchMultiButton
+        android:id="@+id/switchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aksamAlternatifMenuIcerik"
+        app:selectedColor="@color/colorAccent"
+        app:selectedTab="0"
+        app:strokeRadius="6dp"
+        app:strokeWidth="2dp"
+        app:switchTabs="@array/switch_array"
+        app:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/ogleTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/ogle_string"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ogleMenuIcerik"
+        android:layout_width="251dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/menu_placeholder"
+        app:layout_constraintEnd_toEndOf="@+id/ogleTextview"
+        app:layout_constraintStart_toStartOf="@+id/ogleTextview"
+        app:layout_constraintTop_toBottomOf="@+id/ogleTextview" />
+
+    <TextView
+        android:id="@+id/alternatif1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/alternatif_string"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ogleMenuIcerik" />
+
+    <TextView
+        android:id="@+id/ogleAlternatifMenuIcerik"
+        android:layout_width="251dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/menu_placeholder"
+        app:layout_constraintEnd_toEndOf="@+id/alternatif1"
+        app:layout_constraintStart_toStartOf="@+id/alternatif1"
+        app:layout_constraintTop_toBottomOf="@+id/alternatif1" />
+
+    <TextView
+        android:id="@+id/aksamTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/aksam_string"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ogleAlternatifMenuIcerik" />
+
+    <TextView
+        android:id="@+id/aksamMenuIcerik"
+        android:layout_width="251dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/menu_placeholder"
+        app:layout_constraintEnd_toEndOf="@+id/aksamTextView"
+        app:layout_constraintStart_toStartOf="@+id/aksamTextView"
+        app:layout_constraintTop_toBottomOf="@+id/aksamTextView" />
+
+    <TextView
+        android:id="@+id/alternatif2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/alternatif_string"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aksamMenuIcerik" />
+
+    <TextView
+        android:id="@+id/aksamAlternatifMenuIcerik"
+        android:layout_width="251dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/menu_placeholder"
+        app:layout_constraintEnd_toEndOf="@+id/alternatif2"
+        app:layout_constraintStart_toStartOf="@+id/alternatif2"
+        app:layout_constraintTop_toBottomOf="@+id/alternatif2" />
 
 </android.support.constraint.ConstraintLayout>
