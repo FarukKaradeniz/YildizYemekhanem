@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         preferencesManager = SharedPreferencesManager(sharedPreferences)
         yemekhaneService = YemekhaneAPI.getYemekhaneService()
 
+        todayDate.text = "${getDay()}.${getMonth()}.${getYear()}"
         val todayOgrenciMenu = preferencesManager.getOgrenciMenu(getDay(), getMonth(), getYear())
         val todayAlakartMenu = preferencesManager.getAlakartMenu(getDay(), getMonth(), getYear())
         updateOgrenciUI(todayOgrenciMenu)
